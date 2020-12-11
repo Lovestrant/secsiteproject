@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>secsite update page</title>
+	<link rel="stylesheet" type="text/css" href="secsite.css">
+	<script src="secsite.js"></script>
+</head>
+<body>
+	<span>
+		<h1>
+			<p>Update your login details below:</p>
+		</h1>
+	</span>
+		
+		
+
+	<div>
+	<form method="post" action="update.php">
+		<p>Enter your new anonymous user name:</p>
+		<input type="text" name="id" placeholder="Enter your new username here...">
+		<p>Enter your new password:</p>
+
+		<input id="password" type="password" name="passwordupdate" placeholder="Enter your new password...">
+		<button class="eye" onclick="showpassword()">show</button>
+		<p>Confirm your new password:</p>
+		<input id="password2" type="password" name="passwordupdateconfirm" placeholder="Confirm password...">
+		<button class="eye2" onclick="showpassword2()">show</button>
+		<p>
+			<button name="updatenow" style="border: 10px solid red;">Reset</button>
+	</form>
+</p>
+	</div>
+
+</body>
+</html>

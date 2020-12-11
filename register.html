@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>register secsite page</title>
+	<link rel="stylesheet" type="text/css" href="secsite.css">
+	<script src="secsite.js"></script>
+</head>
+<body>
+	<span style="background-color: white">
+		<h1>Enter your details below:</h1>
+	</span>
+	
+	<div>
+		
+		<form method="post" name="register_login" action="nodereg.js">
+		<p>Enter your anonymous unique username</p>
+		<input type="text" name="uniquename" placeholder="Ensure it is your anonymous name to keep your identity secret..." required>
+		<p>Enter your password</p>
+		<input id="password" type="password" name="registerpass" placeholder="Enter password..." required>
+		<button class="eye" onclick="showpassword()">show</button>
+		<p>Confirm password</p>
+		<input id="password2" type="password" name="confirmpass" placeholder="Confirm password..." required>
+		<button class="eye2" onclick="showpassword2()">show</button>
+		
+
+		<p><button type="submit" name="register_login" style="color: red; border: 10px solid red;">Create account</button></p>
+	
+		</form>
+
+		
+		
+	</div>
+
+</body>
+</html>
