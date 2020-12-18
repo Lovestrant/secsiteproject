@@ -14,10 +14,8 @@ dir{
 	margin-top: 50px;
 }
 body{
-	background: gray;
-}
-h1{
-	font-size: 50px;
+	background: rgb(63, 21, 50);
+	margin: 50px;
 }
 
 .me{
@@ -27,9 +25,30 @@ h1{
 span{
 	text-align: center;
 }
-samp{
+#samp{
 	text-align: center;
+	background-color: rgb(26, 12, 19);
+	opacity: 3;
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0%;
+	height: 150px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
 }
+#samp2{
+	text-align: center;
+	background-color: rgb(26, 12, 19);
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0%;
+	height: 150px;
+	
+}
+
+
 .div1{
 	background: lightgray;
 	text-align: center;
@@ -66,3 +85,98 @@ address.display {
 		text-align: left;
 		color: red;
 	}
+
+
+
+.sidenav {
+	width: 130px;
+	position: fixed;
+	z-index: 1;
+	top: 70px;
+	left: -100px;
+	background: rgb(92, 9, 9);
+	overflow-x: hidden;
+	padding: 8px 0;
+	height: auto;
+  }
+
+.sidenav a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #2196F3;
+	display: block;
+  }
+  .sidenav a:hover {
+	color: #064579;
+  }
+  
+
+
+	#mainhearder{
+		color:red; 
+		font-size: 50px;
+		margin-left: 0%;
+		text-align: center;
+		margin-top: 20px;
+		
+		
+	}
+
+	#newlabel {
+		color: brown;
+		
+	}
+
+	#secvids{
+		overflow:scroll;
+		 height:auto;
+		 margin-top: 230px;
+		
+		 width: 80%;
+		 
+	
+	
+	}
+
+	#secpics{
+		overflow:scroll;
+		height:auto;
+		margin-top: 230px;
+		
+		width: 80%;
+		
+	
+	}
+	#secstories{
+		overflow:scroll;
+		height:auto;
+		margin-top: 230px;
+		
+		width: 80%;
+		
+	
+		
+	}
+
+
+
+
+	#labels{
+		color: rgb(240, 15, 60);
+	}
+
+
+
+	#progressBar{
+
+		height: 40px;
+		width: 200px;
+		position: 0%;
+	
+		
+	  }
+
+	  #postsclass3 {
+		 left: 0px;
+	  }
