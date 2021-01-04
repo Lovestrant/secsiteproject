@@ -6,7 +6,7 @@
     <title>SecSite pictures</title>
 
 	<script src="secsite.js"></script>
-	<script src="secsitefirebase.js"></script>
+	<script src="imguploadfirebase.js"></script>
 	
 
 	 
@@ -62,6 +62,7 @@
 
 	<div id="samp">
 		<h1 id="mainhearder">SecSite</h1>
+		<input id="searchinput" type="text" placeholder="Search SecSite" name="search">
 	
 	</div>
 	
@@ -74,6 +75,7 @@
 
 
 
+
       <form id="postpics-form">
         <div id="secpics">
             <p>
@@ -81,17 +83,20 @@
                <!--<button id="picsFs" onclick="reqFullscreen2()">Toggle Fullscreen</button>--> 
             </p>
         
-            <input type="text" placeholder="Search..." name="search">
-        
-            <p><progress class="myprogressBar" id="progressBar" min = "0"; max="100" value="0"></progress></p>
-        <p>
-            <label id="labels"> Attach pictures here</label>
-            <input id="secpicsupload" type="file" accept="image/*" multiple style="width: 50%;">
-            
-        </p>
-        <p><textarea name="textarea" id="textarea2" cols="70" rows= "2" placeholder="Caption your pictures"></textarea> <button onclick="imageupload()">SecPost</button></p>
-        <h4 id="newlabel">New</h4>
-        <div id="postsclass2">
+			<div id="alphadiv">
+				<p>
+					<p>
+					<label id="labels"> Attach pictures here</label>
+					<input id="secpicsupload" type="file" accept="image/*" multiple style="width: auto;"></p>
+				<p><progress class="myprogressBar" id="progressBar" min = "0"; max="100" value="0"></progress></p>
+					
+				</p>
+				<p><textarea name="textarea" id="textarea2" cols="50" rows= "2" placeholder="Caption your pictures"></textarea> <button onclick="imageupload()" id="secpostbtn2">SecPost</button></p>
+				<h4 id="newlabel">New</h4>
+		
+			</div>
+
+        <div id="postsclass2" style="height: auto;">
     
             <!--This is where the pics will get displayed-->
         </div>

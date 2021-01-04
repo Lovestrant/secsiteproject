@@ -11,7 +11,7 @@ dir{
 	color: red;
 	margin: 150px;
 	margin-bottom: 100px;
-	margin-top: 50px;
+	margin-top: 0px;
 }
 body{
 	background: rgb(63, 21, 50);
@@ -27,7 +27,7 @@ span{
 }
 #samp{
 	text-align: center;
-	background-color: rgb(26, 12, 19);
+	background-color: black;
 	opacity: 3;
 	margin-top: 0;
 	margin-left: 0;
@@ -40,11 +40,12 @@ span{
 }
 #samp2{
 	text-align: center;
-	background-color: rgb(26, 12, 19);
-	margin-top: 0;
+	background-color:black;
+	margin-top: 0px;
 	margin-left: 0;
 	margin-right: 0%;
 	height: 150px;
+	
 	
 }
 
@@ -69,13 +70,50 @@ input{
 	text-align: left;
 	background: gray;
 }
-.eye {
+
+.eye0{
 	position: absolute;
+	background: rgb(92, 9, 9);
+	color: #2196F3;
+	left: 76%;
+	top: 100%;
+
+}
+.eye1 {
+	position: absolute;
+	background: rgb(92, 9, 9);
+	color: #2196F3;
+	left: 76%;
+	top: 59%;
+
 
 }
 .eye2 {
 	position: absolute;
+	background: rgb(92, 9, 9);
+	color: #2196F3;
+	left: 76%;
+	top: 77%;
+
+
 }
+.eye3{
+	position: absolute;
+	background: rgb(92, 9, 9);
+	color: #2196F3;
+	left: 76%;
+	top: 59%;
+
+}
+
+.eye4{
+	position: absolute;
+	background: rgb(92, 9, 9);
+	color: #2196F3;
+	left: 76%;
+	top: 77%;
+}
+
 p.trial {
 	position: absolute;
 	left: 8%;
@@ -100,15 +138,52 @@ address.display {
 	height: auto;
   }
 
-.sidenav a {
+ .sidenav a {
 	padding: 6px 8px 6px 16px;
 	text-decoration: none;
 	font-size: 25px;
 	color: #2196F3;
 	display: block;
+	
   }
+
+  .sidenav a:visited{
+	color: rgb(9, 90, 160);
+}
   .sidenav a:hover {
+	color: #03361d;
+	background-color: aliceblue;
+  }
+ 
+
+.Homenavigator{
+	
+	width: 500px;
+	top: 60%;
+	left: 20%;
+	right: 50%;
+	background: rgb(92, 9, 9);
+	overflow-x: hidden;
+	padding: 8px 0;
+	height: auto;
+	padding-top: 0%;
+	margin-top: 0%;
+	margin-left: 30%;
+
+
+}
+.Homenavigator a{
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #2196F3;
+	display: block;
+	
+}
+
+.Homenavigator a:hover {
 	color: #064579;
+	background-color: aliceblue;
   }
   
 
@@ -121,39 +196,42 @@ address.display {
 		margin-top: 20px;
 		
 		
+		
 	}
 
 	#newlabel {
 		color: brown;
+		font-size: 30px;
 		
 	}
 
 	#secvids{
-		overflow:scroll;
+	
 		 height:auto;
 		 margin-top: 230px;
 		
-		 width: 80%;
+		 width: 85%;
+		 /*display: left;*/
 		 
 	
 	
 	}
 
 	#secpics{
-		overflow:scroll;
+		
 		height:auto;
 		margin-top: 230px;
 		
-		width: 80%;
+		width: 85%;
 		
 	
 	}
 	#secstories{
-		overflow:scroll;
+		/*overflow:scroll;*/
 		height:auto;
 		margin-top: 230px;
 		
-		width: 80%;
+		width: 85%;
 		
 	
 		
@@ -173,6 +251,7 @@ address.display {
 		height: 40px;
 		width: 200px;
 		position: 0%;
+
 	
 		
 	  }
@@ -180,3 +259,47 @@ address.display {
 	  #postsclass3 {
 		 left: 0px;
 	  }
+
+	  #secpostbtn1, #secpostbtn2, #secpostbtn3{
+		  color: red;
+		  height: 30px;
+		  background-color: rgb(26, 12, 19);
+	  }
+
+	  #btns{
+		color: red; 
+		background-color: rgb(17, 8, 8);
+		height: 30px;
+	  }
+	  #postclass3{
+		 display: flex;
+	  }
+
+	  #searchinput{
+		position: absolute;
+		top: 50%;
+		left: 20%;
+	  }
+	  #Homehearder{
+		 
+		  padding-top: 30px;
+	  }
+	  .myprogressBar2,.myprogressBar{
+		text-align: center;
+		margin-bottom: 0px;
+
+		
+	  }
+
+	  #alphadiv{
+		  background-color: rgb(56, 35, 35);
+		  height: auto;
+		  margin-top: 0px;
+		  width: auto;
+	  }
+#postsclass2, #postsclass3 {
+	height: auto; 
+	text-align: left;
+	 margin-left: 0%; 
+	padding-left: 0%;
+}

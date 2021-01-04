@@ -4,7 +4,7 @@
 <head>
 	<title>SecSite stories</title>
 	<script src="secsite.js"></script>
-	<script src="secsitefirebase.js"></script>
+	<script src="secstoriesfirebase.js"></script>
 	
 
 	 
@@ -55,6 +55,7 @@
 
 	<div id="samp">
 		<h1 id="mainhearder">SecSite</h1>
+		<p><input id="searchinput" type="text" placeholder="Search SecSite" name="search"></p>
 	
 	</div>
 	
@@ -68,16 +69,26 @@
 <div id="secstories">
 <p>
 	<h2 id="secstoriesh" style="color:brown;">SecStories</h2>
+
 	<!--<button id="storiesFS" onclick="reqFullscreen()">Toggle Fullscreen</button>-->
 </p>
 	
-	<p><input type="text" placeholder="Search.." name="search"></p>
-	<p><textarea name="textarea" id="textarea" cols="70" rows= "2" placeholder="Share your story anonymously"></textarea> <button>SecPost</button></p>
+	<form id="textform">
+	<dir id="alphadiv">
+
+		<p><textarea name="textarea" id="textarea1" cols="50" rows= "2" placeholder="Share your story anonymously" style="margin-top: 20px;"></textarea> <button id="secpostbtn1" onclick="textupload()">SecPost</button></p>
+	</form>
+
 	<h4 id="newlabel">New</h4>
-	<div id="postsclass1">
-		<!--This is where the text posts appear-->
-	</div>
+	</dir>
+
+
+		<div id="postsclass1">
+			<!--This is where the text posts appear-->
+		</div>
 	
+	
+
 	
 
 </div>
