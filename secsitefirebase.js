@@ -69,12 +69,21 @@ function upload() {
                 //displaying data to the  post div
                 for (let [key, value] of Object.entries(data)) {
     
-                    postsdiv.innerHTML ="<div class = 'col-sm-4 mt-2 mb-1'>" +
-                    "<div calss = 'card'>" +
-                       
-                        "<video width= '320' height = '240' controls> <source src = "+value.videoUrl+" type = 'video/mp4'></video>"+
-                        "<p class = 'card-body'<p class = 'card-text'>" + value.text +// "</p>" +
-                        "<button class = 'btn btn-danger' id = '" + key + "' onclick = 'delete_post(this.id)'>Delete</button>" +
+                    postsdiv.innerHTML ="<div class = 'col-sm-4 mt-2 mb-1'  style = ' width: auto; padding-bottom: 20%; background: rgb(63, 21, 50);'>" +
+                    //"<div calss = 'card'>" +
+                    //"<div calss = 'card' style = 'border: 10px solid green;'>" +
+                    "<p class = 'card-body'<p class = 'card-text' style = 'color: white;'>" + value.text +"</p>" +
+                        "<video width= '400' height = '300' controls> <source src = "+value.videoUrl+" type = 'video/mp4'></video>"+
+                     
+                        "<p style ='background-color: black; display: flex; margin-bottom: 0px; height: 60px; width: auto;' >"+
+                  //"<button style='margin-right: 10px;' class = '' id = '" + key + "' onclick = 'delete_post(this.id)'>Delete</button>" +
+                        "<button class = 'btn btn-primary' style='margin-right: 60px; margin-top: 10px;  id = 'onclick = 'like()''>like</button>" +
+                        
+                        "<button class = 'btn btn-primary'  style='margin-right: 70px; id = ' onclick = 'delete_post2(this.id)''>dislike</button>" +
+                        "<button class = 'btn btn-primary' style='margin-right: 70px;  id =' onclick = 'delete_post1(this.id)''>comment</button>" +
+                        "<button class = 'btn btn-primary' id = ' onclick = 'delete_post3(this.id)'>share</button>" +
+                        "</p>"+
+                        "<p id = 'videolikeshere'></p>"+
                         "</div></div>" + postsdiv.innerHTML;
                     }
            
@@ -96,3 +105,25 @@ function delete_post(key){
                     
                     
                     }
+/*
+//function like(){
+    //like button code
+var likes = 1;
+function like(key){
+document.getElementById('videolikeshere').innerHTML = likes;
+for(likes = 1; likes < 1; likes ++){
+	likes = likes + 1;
+}
+
+}//}
+
+//function dislike(){
+    //dislike button code
+var dislikes = 1;
+function dislike(){
+document.getElementById('showdislikes').innerHTML = dislikes;
+likes = likes + 1;
+
+}
+*/
+//}

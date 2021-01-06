@@ -37,6 +37,7 @@ span{
 	top: 0px;
 	left: 0px;
 	width: 100%;
+
 }
 #samp2{
 	text-align: center;
@@ -131,7 +132,7 @@ address.display {
 	position: fixed;
 	z-index: 1;
 	top: 70px;
-	left: -100px;
+	left: -130px;
 	background: rgb(92, 9, 9);
 	overflow-x: hidden;
 	padding: 8px 0;
@@ -207,11 +208,13 @@ address.display {
 
 	#secvids{
 	
-		 height:auto;
-		 margin-top: 230px;
+		 height:20%;
+		 margin-top: -10%;
 		
-		 width: 85%;
+		 background: rgb(63, 21, 50);
 		 /*display: left;*/
+		 margin-left: 10px;
+		
 		 
 	
 	
@@ -220,19 +223,20 @@ address.display {
 	#secpics{
 		
 		height:auto;
-		margin-top: 230px;
-		
+		margin-top: 0px;
+		background: rgb(63, 21, 50);
 		width: 85%;
+		margin-left: 10px;
 		
 	
 	}
 	#secstories{
 		/*overflow:scroll;*/
 		height:auto;
-		margin-top: 230px;
-		
+		margin-top: 200px;
+		background: rgb(63, 21, 50);
 		width: 85%;
-		
+		margin-left: 10px;
 	
 		
 	}
@@ -288,18 +292,41 @@ address.display {
 		text-align: center;
 		margin-bottom: 0px;
 
+
 		
 	  }
 
 	  #alphadiv{
-		  background-color: rgb(56, 35, 35);
+		  background-color: rgb(189, 170, 170);
 		  height: auto;
 		  margin-top: 0px;
-		  width: auto;
+		  width: max-content;
+		  margin-bottom: 0%;
+		  padding-bottom: 0%;
+		  font-size: 15px;
+		  display: flex;
 	  }
 #postsclass2, #postsclass3 {
 	height: auto; 
 	text-align: left;
 	 margin-left: 0%; 
 	padding-left: 0%;
+}
+#postsclass1{
+	background: rgb(63, 21, 50);
+}
+.container{
+	background: rgb(63, 21, 50);
+}
+.row{
+	height: auto;
+	background: rgb(63, 21, 50);
+	margin-top: 0%;
+	margin-bottom: 20px;
+}
+#secpicsh, #secvidsh{
+	margin-left: 150px;
+}
+#secpicsupload{
+	width: 50px;
 }
