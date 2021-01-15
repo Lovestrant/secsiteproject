@@ -72,48 +72,6 @@ input{
 	background: gray;
 }
 
-.eye0{
-	position: absolute;
-	background: rgb(92, 9, 9);
-	color: #2196F3;
-	left: 76%;
-	top: 100%;
-
-}
-.eye1 {
-	position: absolute;
-	background: rgb(92, 9, 9);
-	color: #2196F3;
-	left: 76%;
-	top: 59%;
-
-
-}
-.eye2 {
-	position: absolute;
-	background: rgb(92, 9, 9);
-	color: #2196F3;
-	left: 76%;
-	top: 77%;
-
-
-}
-.eye3{
-	position: absolute;
-	background: rgb(92, 9, 9);
-	color: #2196F3;
-	left: 76%;
-	top: 59%;
-
-}
-
-.eye4{
-	position: absolute;
-	background: rgb(92, 9, 9);
-	color: #2196F3;
-	left: 76%;
-	top: 77%;
-}
 
 p.trial {
 	position: absolute;
@@ -129,29 +87,65 @@ address.display {
 
 .sidenav {
 	width: 130px;
+	text-align: left;
 	position: fixed;
 	z-index: 1;
 	top: 70px;
 	left: -130px;
 	background: rgb(92, 9, 9);
 	overflow-x: hidden;
-	padding: 8px 0;
+	padding: 8px;
 	height: auto;
+  }
+
+  .sidenav3{
+	  height: 20px;
+	  position: fixed;
   }
 
  .sidenav a {
 	padding: 6px 8px 6px 16px;
 	text-decoration: none;
-	font-size: 25px;
+	font-size: 20px;
 	color: #2196F3;
 	display: block;
 	
   }
 
   .sidenav a:visited{
-	color: rgb(9, 90, 160);
+	color: rgb(13, 214, 147);
 }
   .sidenav a:hover {
+	color: #03361d;
+	background-color: aliceblue;
+  }
+
+
+  .sidenav2{
+	width: auto;
+	text-align: right;
+	position: fixed;
+	z-index: 1;
+	top: 70px;
+	right: -10%;
+	background: rgb(92, 9, 9);
+	overflow-x: hidden;
+	
+	height: auto;
+}
+.sidenav2 a {
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 15px;
+	color: #2196F3;
+	display: block;
+	
+  }
+
+  .sidenav2 a:visited{
+	color: rgb(13, 214, 147);
+}
+  .sidenav2 a:hover {
 	color: #03361d;
 	background-color: aliceblue;
   }
@@ -159,7 +153,7 @@ address.display {
 
 .Homenavigator{
 	
-	width: 500px;
+	width: 600px;
 	top: 60%;
 	left: 20%;
 	right: 50%;
@@ -169,7 +163,7 @@ address.display {
 	height: auto;
 	padding-top: 0%;
 	margin-top: 0%;
-	margin-left: 30%;
+	margin-left: 15%;
 
 
 }
@@ -199,25 +193,40 @@ address.display {
 		
 		
 	}
+	#newlabel0{
+		color: rgb(235, 17, 17);
+		font-size: 30px;
+		margin-left: -30%;
+		text-align: center;
 
-	#newlabel {
-		color: brown;
+	}
+
+	#newlabel1 {
+		color: rgb(235, 17, 17);
+		font-size: 30px;
+		margin-left: 80%;
+		text-align: center;
+
+		
+	}
+	#newlabel2{
+		color: rgb(235, 17, 17);
 		font-size: 30px;
 		
+		text-align: left;
+
 	}
 
 	#secvids{
 	
 		 height:20%;
-		 margin-top: -10%;
-		
+		 margin-top: 0px;
+		 margin-top: 0%;
 		 background: rgb(63, 21, 50);
 		 /*display: left;*/
-		 margin-left: 10px;
+		 margin-left: 100px;
+		 width: auto;
 		
-		 
-	
-	
 	}
 
 	#secpics{
@@ -226,7 +235,7 @@ address.display {
 		margin-top: 0px;
 		background: rgb(63, 21, 50);
 		width: 85%;
-		margin-left: 10px;
+		margin-left: 100px;
 		
 	
 	}
@@ -241,24 +250,24 @@ address.display {
 		
 	}
 
+	#secvideos{
+				/*overflow:scroll;*/
+				height:auto;
+				margin-top: 200px;
+				background: rgb(63, 21, 50);
+				width: 85%;
+				margin-left: 10px;
+			
+				
+	}
 
 
 
 	#labels{
 		color: rgb(240, 15, 60);
+		text-align: left;
 	}
 
-
-
-	#progressBar{
-
-		height: 40px;
-		width: 200px;
-		position: 0%;
-
-	
-		
-	  }
 
 	  #postsclass3 {
 		 left: 0px;
@@ -277,43 +286,61 @@ address.display {
 	  }
 	  #postclass3{
 		 display: flex;
+		 margin-top: -10%;
 	  }
 
 	  #searchinput{
 		position: absolute;
 		top: 50%;
-		left: 20%;
+		left: 7%;
+		height: 40px;
+		display: flex;
+	
 	  }
+	  #searchme{
+		width: 800px;
+		height: 40px;
+	
+	  }
+	  #btndanger{
+		  height: auto;
+		  padding-top: 10px;
+		  position: absolute;
+		margin-left: 99%;
+		margin-top: 1%;
+	  }
+
 	  #Homehearder{
 		 
 		  padding-top: 30px;
 	  }
-	  .myprogressBar2,.myprogressBar{
-		text-align: center;
-		margin-bottom: 0px;
 
-
-		
-	  }
 
 	  #alphadiv{
 		  background-color: rgb(189, 170, 170);
 		  height: auto;
-		  margin-top: 0px;
-		  width: max-content;
+		border-radius: 10px;
+		  width: 100%;
 		  margin-bottom: 0%;
-		  padding-bottom: 0%;
+		
 		  font-size: 15px;
-		  display: flex;
+		  padding: 5px;
+		
+		
+		  
 	  }
 #postsclass2, #postsclass3 {
 	height: auto; 
 	text-align: left;
 	 margin-left: 0%; 
 	padding-left: 0%;
+	background-color:  rgb(63, 21, 50);
+	
 }
 #postsclass1{
 	background: rgb(63, 21, 50);
+	margin-left: -5%;
+	margin-top: -10%;
 }
 .container{
 	background: rgb(63, 21, 50);
@@ -324,9 +351,46 @@ address.display {
 	margin-top: 0%;
 	margin-bottom: 20px;
 }
-#secpicsh, #secvidsh{
-	margin-left: 150px;
+#secvidsh{
+	position:inherit;
+	margin-top: -30px;
+	margin-left: -10%;
+
+
+}
+#secpicsh{
+	position:inherit;
+	margin-top: -30px;
+	margin-left: -10%;
+
 }
 #secpicsupload{
 	width: 50px;
+	
+
+
 }
+#secstoriesh{
+	
+	position:inherit;
+	margin-top: -30px;
+	margin-left: -10%;
+
+
+}
+#textarea1{
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-left: 0px;
+	
+}
+
+.progress-bar{
+
+	height: 20px;
+	width: auto;
+	text-align: center;
+	margin-left: 0%;
+
+	
+  }

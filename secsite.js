@@ -193,3 +193,56 @@ function reqFullscreen2(){
 		})
 
 }
+
+function share(key) {
+    const url = window.document.location.href;
+    const title = window.document.title;
+
+    button.addEventListener('click', () => {
+        if(navigator.share) {
+            navigator.share({
+                title: '${title}',
+                url: '${url}'
+            }).then( () => {
+                alert('thanks for sharing');
+            }).catch(console.error);
+            }
+    });
+}
+
+
+function background(){
+	
+	document.getElementById("firstsidenav").style.backgroundColor="green";
+}
+function background2(){
+	
+	const a=0;
+	var b=1;
+	
+	if(b>a){
+		for(i=0;i>-1;i++){
+		document.getElementById("secondsidenav").style.backgroundColor="green";
+		
+	}
+	
+}
+
+function background3(){
+	
+	const a=0;
+	var b=1;
+	
+	if(b>a){
+		for(i=0;i>-1;i++){
+		document.getElementById("thirdsidenav").style.backgroundColor="green";
+	}
+	}
+	
+}}
+
+$(document).ready(function () {
+	$('#textarea1').emojioneArea({
+		pickerposition: "bottom"
+	})
+})
