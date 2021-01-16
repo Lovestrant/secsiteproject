@@ -127,7 +127,7 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 							<label class="form-label" for="secpicsupload" id="labels"> Attach pictures here</label><br>
 				
 							
-								<input id="secpicsupload" type="file" name="image" accept="image/*" multiple style="width: auto;" style="background-color: red;"><br>
+								<input id="secpicsupload" type="file" name="image" accept="image/*" style="width: auto;" style="background-color: red;"><br>
 					</p>	
 						
 						<progress class="progress-bar" id="progressBar" min = "0"; max="100" value="0"></progress><br>
@@ -150,7 +150,7 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 			
 				</p>
 			
-							<button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2">SecPost</button>
+							<button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2" onclick="uploadFile()">SecPost</button>
             </form>
 						     
              </dir>
@@ -214,6 +214,35 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 </div>
 
 
+<script>
+		function _(el){
+			return document.getElementById(el);
+		}
+
+		function uploadFile(){
+			var file= _("secpicsupload").files[0];
+
+			var formdata = new FormData();
+			formdata.append("secpicsupload", file);
+			var ajax= new XMLHttpRequest();
+			ajax.upload.addEventListener("progress", progressHandler, false);
+			ajax.addEventListener("load", completeHandler, false);
+
+			ajax.open("POST", "secpictures.php");
+			ajax.send(formdata);
+		}
+
+		function progressHandler(event){
+		var percent=(event.loaded / event.total) *100;
+
+		_("progressBar").value = Math.round(percent) ;
+		}
+		function completeHandler(event){
+
+		_("progressBar").value = 0;
+
+		}
+</script>
 
 
 

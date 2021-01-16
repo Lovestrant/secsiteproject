@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="col-sm-1">
-<p name="textarea12" id="textarea1" cols="30" rows="10" id= "textarea1" style="width: 50%;"></p>
+<div name="textarea12" id="textarea1" cols="30" rows="10" id= "textarea1" style="width: 50%;"></div>
 
 
   <script>

@@ -122,7 +122,7 @@ if (isset($_POST['upload'])) {
 			<p style="display: flex; text-align: centre; margin-bottom: 0%;">
 			
 			<label  class="form-label" for="secvidsupload"  id="labels"> Attach videos/audios here</label>
-                    <input type="file" name="file" style="width: auto;" id="inpFile">	
+                    <input type="file" name="file" style="width: auto;" id="inpFile" accept="video/*, audio/*">	
 			</p>
 
                     <progress class="progress-bar" id="progressBar" name="progressBar" min = "0"; max="100" value="0"></progress><br>
@@ -143,7 +143,7 @@ if (isset($_POST['upload'])) {
 			
 				</p>
 			
-                    <button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2">SecPost</button>
+                    <button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2" onclick="uploadFile()">SecPost</button>
 
                 </form>
                                     
@@ -199,7 +199,35 @@ if (isset($_POST['upload'])) {
 
 
 </div>
+<script>
+function _(el){
+	return document.getElementById(el);
+}
 
+function uploadFile(){
+	var file= _("inpFile").files[0];
+
+	var formdata = new FormData();
+	formdata.append("inpFile", file);
+	var ajax= new XMLHttpRequest();
+	ajax.upload.addEventListener("progress", progressHandler, false);
+	ajax.addEventListener("load", completeHandler, false);
+
+	ajax.open("POST", "secvideos.php");
+	ajax.send(formdata);
+}
+
+function progressHandler(event){
+var percent=(event.loaded / event.total) *100;
+
+_("progressBar").value = Math.round(percent) ;
+}
+function completeHandler(event){
+
+_("progressBar").value = 0;
+
+}
+</script>
 
 
 
