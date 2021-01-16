@@ -36,8 +36,8 @@
                         <form action="searchengine1.php" method="POST" name="sec-search1">
                         <p  id="searchinput">
                         
-                                <input class="form-control"   class="form-control" type="text" placeholder="Search SecSite" id="searchme" name="search">
-                                <button class="btn btn-danger" type="submit" name="search1" id="btndanger">SecSearch</button>
+                                <input class="form-control"   class="form-control" type="text" placeholder="Search SecSite" id="searchme" name="search1">
+                                <button class="btn btn-danger" type="submit" name="searchbtn1" id="btndanger">SecSearch</button>
                         </p>
                         
                         </form>
@@ -63,48 +63,55 @@
 	  </div>
 	
                     
-              <div style="background-color:  rgb(63, 21, 50); margin-top: -10%;">
+ <div style="background-color:  rgb(63, 21, 50); margin-top: -10%;">
+        
+         <div id="postsclass1"  style="margin-top: 50%; margin-left: -25%;">
+			<!--This is where the text posts appear-->
               
               <?php
                             include('db.php');
                             if(isset($_POST['searchbtn1'])) {
-                               
-                                    $search = mysqli_real_escape_string($con, $_POST['sec-search1']);
-                                    $sql = "SELECT * FROM secstories WHERE textpost LIKE '%$search%'";
-                                    $result = mysqli_query($con, $sql);
-                                    $queryResult = mysqli_num_rows($result);
-            
-                                
-            
-                                    if($queryResult > 0) {
-                                        while($row = mysqli_fetch_assoc($result)) {
-                                            echo "
-                                            <div style='height: auto; border-radius: 10px; margin-left: -5%; margin-bottom= 0%;  margin-top: 25%; width: 80%;'>
-                                            
-                                                <div style='height: auto; width:100%;border-radius: 10px;margin-left: 0%; '>".$row['textpost']."</div>
-                                            </div>
-                                        <div style='height:40px; width:100%; display:flex; margin-top: -6%; background-color:  rgb(63, 21, 50);'>
-                                            <button class='btn btn-primary' style=' margin-left: -20%;'>Like</button>
-                                            <button class='btn btn-primary'  style='margin-left: 25%;'>comment</button>
-                                            <button class='btn btn-primary'style=' margin-left: 30%;' >share</button>
-                                        </div>
-                            
-                                            ";
-                                        
-                                        }
-                                        
-                                    }else {
-                                        echo"<script>alert('No results matching your search.');</script>";
-                                        echo "<script>location.replace('secstories.php');</script>";
-                                    }
-            
-                                }
-                              
-                            
 
+                               if(!empty($_POST['search1'])){
+                                $search = mysqli_real_escape_string($con, $_POST['search1']);
+                                $sql = "SELECT * FROM secstories WHERE textpost LIKE '%$search%'";
+                                $result = mysqli_query($con, $sql);
+                                $queryResult = mysqli_num_rows($result);
+        
+                            
+        
+                                if($queryResult > 0) {
+                                    while($row = mysqli_fetch_assoc($result)) {
+                                        echo "
+                                        <div style='height: auto; border-radius: 10px; margin-bottom= 0%;  margin-top: 18%; width: 80%;'>
+                                        
+                                            <div style='height: auto; width:120%;padding: 50px; border-radius: 10px; margin-left: 0%;'>".$row['textpost']."</div>
+                                        </div>
+                                    <div style='height:40px; width:100%; display:flex; margin-top: -8%; background-color:  rgb(63, 21, 50);'>
+                                        <button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
+                                        <button class='btn btn-primary'  style='margin-left: 25%;'>comment</button>
+                                        <button class='btn btn-primary'style=' margin-left: 30%;' >share</button>
+                                    </div>
+                            
+                    
+                                        ";
+                                
+                                }
+                            }else {
+                                echo"<script>alert('No results matching your search.');</script>";
+                                echo "<script>location.replace('secstories.php');</script>";
+                            }
+                               }else{
+                                echo "<script>alert('Type something to search')</script>";
+                                echo "<script>location.replace('secstories.php');</script>";   
+                               }
+
+                                 
+                            }
+                        
                         ?>
 
-              
+</div>  
               </div>          
 
                 

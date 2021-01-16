@@ -81,7 +81,7 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 <div class="container">
 	<div id="samp">
 		<h1 id="mainhearder">SecSite</h1>
-		<form action="searchengine2.php" name="sec-search2">
+		<form action="searchengine2.php" name="sec-search2" method="POST">
 		<p  id="searchinput">
 		
 				<input class="form-control" type="text" placeholder="Search SecSite" id="searchme" name="search2">
@@ -107,6 +107,7 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 		<a href="Politics2.php">Politics</a>
 		<a href="Entertainment2.php">Entertainment</a>
 		<a href="Gamesandsports2.php">Games & sports</a>
+		<a href="Business2.php">Business</a>
 		<a href="Others2.php">Others</a>
 		
 	  </div>
@@ -142,6 +143,11 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 				<input type="radio" name="category" value="Gamesandsports" style="height: 20px;">Games&sports<br>
 				
 				<input type="radio" name="category" value="Others" style="height: 20px;">Others
+				</p>
+			
+				<p style="margin-top: -20px;">
+				<input type="radio" name="category" value="Business" style="height: 20px; width:20px; text-align: left;">Business<br>
+			
 				</p>
 			
 							<button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2">SecPost</button>

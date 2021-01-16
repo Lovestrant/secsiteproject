@@ -239,10 +239,5 @@ function background3(){
 	}
 	}
 	
-}}
-
-$(document).ready(function () {
-	$('#textarea1').emojioneArea({
-		pickerposition: "bottom"
-	})
-})
+}
+}

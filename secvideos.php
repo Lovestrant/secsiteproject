@@ -17,7 +17,7 @@ if (isset($_POST['upload'])) {
 	
 	
 		move_uploaded_file($tmp,"videos/".$name);
-	$_POST['progressBar'] = move_uploaded_file($tmp,"videos/".$name)*100;
+	//$_POST['progressBar'] = move_uploaded_file($tmp,"videos/".$name)*100;
 		
 		$sql = "INSERT INTO videos(name, caption, category) VALUES ('$name','$caption', '$category')";
 		$res = mysqli_query($con,$sql);
@@ -28,7 +28,7 @@ if (isset($_POST['upload'])) {
 		}
 	
 	}else{
-		echo "<script>alert('Choose a video file to SecPost')</script>";
+		echo "<script>alert('Choose a video or audio  file to SecPost')</script>";
 		echo "<script>location.replace('secvideos.php');</script>";
 	}
 	
@@ -101,6 +101,7 @@ if (isset($_POST['upload'])) {
 		<a href="Politics3.php">Politics</a>
 		<a href="Entertainment3.php">Entertainment</a>
 		<a href="Gamesandsports3.php">Games & sports</a>
+		<a href="Business3.php">Business</a>
 		<a href="Others3.php">Others</a>
 		
 	  </div>
@@ -117,11 +118,11 @@ if (isset($_POST['upload'])) {
         <dir id="alphadiv" style="width: 60%;  padding: 10px;">
 
                                         
-                 <form method ="POST" action="secvideos.php"  enctype="multipart/form-data">		
+                 <form method ="POST" action="secvideos.php"  enctype="multipart/form-data" id="uploadForm3">		
 			<p style="display: flex; text-align: centre; margin-bottom: 0%;">
 			
 			<label  class="form-label" for="secvidsupload"  id="labels"> Attach videos/audios here</label>
-                    <input type="file" name="file" style="width: auto;">	
+                    <input type="file" name="file" style="width: auto;" id="inpFile">	
 			</p>
 
                     <progress class="progress-bar" id="progressBar" name="progressBar" min = "0"; max="100" value="0"></progress><br>
@@ -136,6 +137,10 @@ if (isset($_POST['upload'])) {
 				<input type="radio" name="category" value="Gamesandsports" style="height: 20px;">Games&sports<br>
 				
 				<input type="radio" name="category" value="Others" style="height: 20px;">Others
+				</p>
+				<p style="margin-top: -20px;">
+				<input type="radio" name="category" value="Business" style="height: 20px; width:20px; text-align: left;">Business<br>
+			
 				</p>
 			
                     <button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2">SecPost</button>
@@ -158,20 +163,22 @@ if (isset($_POST['upload'])) {
 		if($queryResults >0) {
 			while($row = mysqli_fetch_assoc($result)) {
 				echo "
-				<div style='height:auto; margin-top:20%;'>
-				<div  style='height: auto;width: auto; border-radius: 10px;'>".$row['caption']."</div>
+				<div style='height:auto;margin-top:20%;'>
+				<div  style='height: auto;width: 100%; border-radius: 10px;text-align: left; margin-left:0%; padding:10px; '>".$row['caption']."</div>
 		
-				<video style='width: 100%; height: auto;' controls>
+				<video style='width: 100%; height: auto; margin-top:-12%;' controls>
 				<source src='videos/".$row['name']."' type= 'video/mp4'>
 				
 			
 				
 				</div>
 				<div style='height:40px; width:100%; display:flex; margin-top: -10%; background-color:  rgb(63, 21, 50);'>
-					<button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
+					<button onclick='like()' class='btn btn-primary' style=' margin-left: 0%;'>Like</button><br><br>
+					<label id='likelabel' style='color:white;'></label>
 					<button class='btn btn-primary'  style='margin-left: 20%;'>comment</button>
 					<button class='btn btn-primary'style=' margin-left: 19%;' >share</button>
 				</div>
+		
 			
 				";
 			}
@@ -181,7 +188,7 @@ if (isset($_POST['upload'])) {
 			}
 		
 	?>
-
+	
 
 	
 </div>

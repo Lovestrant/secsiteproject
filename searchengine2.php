@@ -1,7 +1,5 @@
 
-
 <!DOCTYPE html>
- <html>
 <html>
 <head>
 	<title>SecSite stories</title>
@@ -35,11 +33,11 @@
 <div class="container">
 	<div id="samp">
 		<h1 id="mainhearder">SecSite</h1>
-		<form action="searchengine2.php" name="sec-search2">
+		<form action="searchengine2.php" method="POST" name="sec-search2">
 		<p  id="searchinput">
 		
-				<input class="form-control"  type="text" placeholder="Search SecSite" id="searchme" name="search">
-                <button class="btn btn-danger" type="submit" name="search" id="btndanger">SecSearch</button>
+				<input class="form-control"  type="text" placeholder="Search SecSite" id="searchme" name="search2">
+				<button class="btn btn-danger" type="submit" name="searchbtn2" id="btndanger">SecSearch</button>
 		</p>
 		
 		</form>
@@ -54,87 +52,93 @@
 		<a  href="secpictures.php">SecPics</a>
 		<a  href="secvideos.php">SecVids</a>
 		
-      </div>
-      
-      <div class="sidenav2">
+	  </div>
+
+	  <div class="sidenav2">
 		<a href="Loveandlife2.php">Love & Life</a>
 		<a href="Politics2.php">Politics</a>
 		<a href="Entertainment2.php">Entertainment</a>
 		<a href="Gamesandsports2.php">Games & sports</a>
 		<a href="Others2.php">Others</a>
 		
-	  </div>
-
-		
+	  </div>	
 
 <div id="secvideos" style="width: 1000px; margin-left: 50px;">
 
 
 
-		<div id="postsclass2">
-            <!--This is where the text posts appear-->
+		<div id="postsclass3">
+			<!--This is where the text posts appear-->
          <?php
             include('db.php');
-            if(isset($_POST['searchbtn2'])) {
+        if(isset($_POST['searchbtn2'])) {
+            if(!empty($_POST['search2'])){
+
                 $search = mysqli_real_escape_string($con, $_POST['search2']);
-                $sql = "SELECT * FROM pictures WHERE name LIKE '%$search%' || WHERE caption LIKE '%$search%'";
+                $sql = "SELECT * FROM pictures WHERE caption LIKE '%$search%'";
                 $result = mysqli_query($con, $sql);
                 $queryResult = mysqli_num_rows($result);
 
-             
+           
 
                 if($queryResult > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
                         echo "
-                        <div  style='height: auto; width:80%;padding: 50px; border-radius: 10px; margin-top: 25%;'>
+			
+                        <div  style='height: auto; width:80%;padding: 10px; border-radius-top: 0px; margin-top: 20%;'>
                         <p>".$row['caption']."</p>
+                        </div>
                         
-                        </div>
-                        ";
-                        echo " <div  style='height: auto; width:80%;padding: 10px; border-radius: 2px; margin-top: -12%;'>
-                        <img src='pictures/".$row['name']."' style = 'width: 100%; height:auto;'>;
-        
                     
-                        ";
-                        echo"
-                        </div>
+                         <div  style='height: 80%; width:80%;padding: 10px; border-radius: 2px; margin-top: -12%;'>
+                        <img src='pictures/".$row['name']."' style = 'width: 100%; height:auto;'>
+        
+                    </div>
+                        
+                        
                         <div style='height:40px; width:100%; display:flex; margin-top: -10%; background-color:  rgb(63, 21, 50);'>
                             <button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
                             <button class='btn btn-primary'  style='margin-left: 25%;'>comment</button>
                             <button class='btn btn-primary'style=' margin-left: 30%;' >share</button>
                         </div>
-                    
+                        
                         ";
         
                         
+                        
                     }
-                    
-                }else {
+                }else{
                     echo"<script>alert('No results matching your search.');</script>";
                     echo "<script>location.replace('secpictures.php');</script>";
                 }
 
+            }else{
+                echo "<script>alert('Type something to search')</script>";
+                                 echo "<script>location.replace('secpictures.php');</script>";   
+                                }
+ 
             }
+                
 
             ?>
 
-
-
+	
 		</div>
 	
 	
 
 	
 
-</div>
+        </div>
 
 
 
-</div>
+    </div>
 
 
 
 
 
-</body>
+    </body>
+
 </html>

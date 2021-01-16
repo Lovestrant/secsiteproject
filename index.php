@@ -15,18 +15,22 @@
 	
 </head>
 <body>
-  <textarea name="" id="" cols="30" rows="10" id= "textarea1"></textarea>
+<div class="col-sm-1">
+<p name="textarea12" id="textarea1" cols="30" rows="10" id= "textarea1" style="width: 50%;"></p>
 
 
   <script>
 	
 			$(document).ready(function () {
 				$('#textarea1').emojioneArea({
-					pickerposition: "bottom",
+					pickerPosition: "bottom",
+					width: "0%"
 				
 				})
 			})
 </script>
 	
+</div>
+  
 </body>
 </html>

@@ -11,7 +11,7 @@
 		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
 		crossorigin="anonymous"></script>
 	<script src="js/emojionearea.min.js"></script>
-	
+	<script src="js/emojionearea.js"></script>
 
 	 
 	
@@ -23,6 +23,7 @@
 
 <link rel="stylesheet" type="text/css" href="secsite.css">
 <link rel="stylesheet" type="text/css" href="css/emojionearea.min.css">
+<link rel="stylesheet" type="text/css" href="css/emojionearea.css">
 
 </head>
 
@@ -66,6 +67,7 @@
 		<a href="Politics1.php">Politics</a>
 		<a href="Entertainment1.php">Entertainment</a>
 		<a href="Gamesandsports1.php">Games & sports</a>
+		<a href="Business1.php">Business</a>
 		<a href="Others1.php">Others</a>
 		
 	  </div>
@@ -95,22 +97,29 @@
 				
 				<input type="radio" name="category" value="Others" style="height: 20px;">Others
 				</p>
+				<p style="margin-top: -20px;">
+				<input type="radio" name="category" value="Business" style="height: 20px; width:20px; text-align: left;">Business<br>
 			
-			
+				</p>
+				
 					
 					<button name="btnsubmit" type="submit" class="btn btn-primary" id="secpostbtn1" onclick="textupload()">SecPost</button></p><br>
 	</form>
 <!--Emoji javascript codes-->
+
 <script>
 	
-			$(document).ready(function () {
-				$('#textarea12').emojioneArea({
-					pickerposition: "bottom",
-				
-				})
-			})
+	$(document).ready(function () {
+		$('#textarea12').emojioneArea({
+			pickerPosition: "bottom",
+			width: "30px",
+			height: "0px"
+		
+		
+		})
+	})
 </script>
-	
+
 	</dir>
 	<h4 id="newlabel0">New</h4>
 	
@@ -131,7 +140,7 @@
 						<div style='height: auto; width:100%;padding: 50px; border-radius: 10px; margin-left: 0%;'>".$row['textpost']."</div>
 					</div>
 				<div style='height:40px; width:100%; display:flex; margin-top: -8%; background-color:  rgb(63, 21, 50);'>
-					<button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
+					<p style='font-size: 40px;'>&#x1F603;</p>
 					<button class='btn btn-primary'  style='margin-left: 25%;'>comment</button>
 					<button class='btn btn-primary'style=' margin-left: 30%;' >share</button>
 				</div>
@@ -144,7 +153,7 @@
 			echo"<script>alert('No record yet')</script>";
 			}
 
-	
+			//<button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
 		
 		?>
 

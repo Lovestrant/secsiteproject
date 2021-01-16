@@ -28,7 +28,7 @@ if (isset($_POST['upload'])) {
 		}
 	
 	}else{
-		echo "<script>alert('Choose a video file to SecPost')</script>";
+		echo "<script>alert('Choose a video or audio file to SecPost')</script>";
 		echo "<script>location.replace('secvideos.php');</script>";
 	}
 	
@@ -76,7 +76,7 @@ if (isset($_POST['upload'])) {
 <div class="container">
 	<div id="samp">
 		<h1 id="mainhearder">SecSite</h1>
-		<form action="searchengine3.php" method="POST" name="sec-search3">
+		<form action="searchengine3entertainment.php" method="POST" name="sec-search3">
 		<p  id="searchinput">
 		
 				<input class="form-control" type="text" placeholder="Search SecSite" id="searchme" name="search3">
@@ -101,6 +101,7 @@ if (isset($_POST['upload'])) {
 		<a href="Politics3.php">Politics</a>
 		<a href="Entertainment3.php">Entertainment</a>
 		<a href="Gamesandsports3.php">Games & sports</a>
+		<a href="Business3.php">Business</a>
 		<a href="Others3.php">Others</a>
 		
 	  </div>
@@ -137,7 +138,10 @@ if (isset($_POST['upload'])) {
 				
 				<input type="radio" name="category" value="Others" style="height: 20px;">Others
 				</p>
+				<p style="margin-top: -20px;">
+				<input type="radio" name="category" value="Business" style="height: 20px; width:20px; text-align: left;">Business<br>
 			
+				</p>
                     <button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2">SecPost</button>
 
                 </form>
@@ -159,9 +163,9 @@ if (isset($_POST['upload'])) {
 			while($row = mysqli_fetch_assoc($result)) {
 				echo "
 				<div style='height:auto; margin-top:20%;'>
-				<div  style='height: auto;width: auto; border-radius: 10px;'>".$row['caption']."</div>
+				<div  style='height: auto;width: auto; border-radius: 10px;text-align: left; margin-left:0%; padding:10px;'>".$row['caption']."</div>
 		
-				<video style='width: 100%; height: auto;' controls>
+				<video style='width: 100%; height: auto; margin-top:-12%;' controls>
 				<source src='videos/".$row['name']."' type= 'video/mp4'>
 				
 			

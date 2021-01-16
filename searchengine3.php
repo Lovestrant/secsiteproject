@@ -38,7 +38,7 @@
 		<p  id="searchinput">
 		
 				<input class="form-control"  type="text" placeholder="Search SecSite" id="searchme" name="search3">
-				<button class="btn btn-danger" type="submit" name="search3" id="btndanger">SecSearch</button>
+				<button class="btn btn-danger" type="submit" name="searchbtn3" id="btndanger">SecSearch</button>
 		</p>
 		
 		</form>
@@ -73,8 +73,10 @@
          <?php
             include('db.php');
             if(isset($_POST['searchbtn3'])) {
-                $search = mysqli_real_escape_string($con, $_POST['sec-search3']);
-                $sql = "SELECT * FROM videos WHERE name LIKE '%$search%' || WHERE caption LIKE '%$search%'";
+				if(!empty($_POST['search3'])){
+
+                $search = mysqli_real_escape_string($con, $_POST['search3']);
+                $sql = "SELECT * FROM videos WHERE caption LIKE '%$search%'";
                 $result = mysqli_query($con, $sql);
                 $queryResult = mysqli_num_rows($result);
 
@@ -84,9 +86,9 @@
                     while($row = mysqli_fetch_assoc($result)) {
 						echo "
 						<div style='height:auto; margin-top:20%'>
-						<div  style='height: auto; border-radius: 10px;'>".$row['caption']."</div>
+						<div  style='height: auto; border-radius: 10px;text-align: left; margin-left:0%; padding:10px;'>".$row['caption']."</div>
 				
-						<video style='width: 100%; height: auto;' controls>
+						<video style='width: 100%; height: auto; margin-top:-12%;' controls>
 						<source src='videos/".$row['name']."' type= 'video/mp4'>
 						
 					
@@ -109,7 +111,12 @@
                 }else {
 					echo"<script>alert('No results matching your search.');</script>";
 					echo "<script>location.replace('secvideos.php');</script>";
-                }
+				}
+				
+			}else{
+				echo "<script>alert('Type something to search')</script>";
+								 echo "<script>location.replace('secvideos.php');</script>";   
+								}
 
             }
 
