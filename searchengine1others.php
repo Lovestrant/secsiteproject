@@ -89,10 +89,11 @@
                                                 <div style='height: auto; width:120%;padding: 50px; border-radius: 10px; margin-left: 0%;'>".$row['textpost']."</div>
                                             </div>
                                         <div style='height:40px; width:100%; display:flex; margin-top: -8%; background-color:  rgb(63, 21, 50);'>
-                                            <button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
-                                            <button class='btn btn-primary'  style='margin-left: 25%;'>comment</button>
-                                            <button class='btn btn-primary'style=' margin-left: 30%;' >share</button>
-                                        </div>
+                                           
+					<button class='btn btn-primary'  style='margin-left: 5%;'>comment</button>
+					<button class='btn btn-primary'style=' margin-left: 50%;' id='sharebtn' data-title='Document'>share</button>
+
+                   </div>
                                 
                         
                                             ";

@@ -55,7 +55,10 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 
 	
 
-	 
+	 <!--Jquery links-->
+	
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
 	
 
 <!--bootstrap links-->
@@ -164,7 +167,7 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 			
 		<?php
 		include('db.php');
-		$sql="SELECT * FROM pictures ORDER BY ID DESC";
+		$sql="SELECT * FROM pictures ORDER BY ID DESC LIMIT 3";
 		$result= mysqli_query($con,$sql);
 		$queryResults= mysqli_num_rows($result);
 		
@@ -184,9 +187,9 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 				
 				
 				<div style='height:40px; width:100%; display:flex; margin-top: -10%; background-color:  rgb(63, 21, 50);'>
-					<button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
-					<button class='btn btn-primary'  style='margin-left: 25%;'>comment</button>
-					<button class='btn btn-primary'style=' margin-left: 30%;' >share</button>
+					
+					<button class='btn btn-primary'  style='margin-left: 5%;'>comment</button>
+					<button class='btn btn-primary'style=' margin-left: 50%;' >share</button>
 				</div>
 				
 				";
@@ -204,7 +207,25 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 		</div>
 	
 	
+		<button class="btn btn-success" id= "morebtn" style="margin-bottom: 10%; margin-left: 20%;font-size: 30px;">See more posts</button>
+			<script>
+			//Jquery code to load 3 posts at a time
 
+			$(document).ready(function(){
+				var postcount = 3;
+
+			$("#morebtn").click(function() {
+				 postcount= postcount+ 3;
+				$("#postsclass2").load("loadpictureposts.php", {
+					postNewCount: postcount 
+
+				});
+
+			});
+
+			});
+
+</script>
 	
 
 </div>

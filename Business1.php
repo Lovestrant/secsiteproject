@@ -123,7 +123,7 @@
 
 			<?php
 		include('db.php');
-		$sql="SELECT * FROM secstories WHERE category='Business' ORDER BY ID DESC";
+		$sql="SELECT * FROM secstories WHERE category='Business' ORDER BY ID DESC LIMIT 5";
 		$result= mysqli_query($con,$sql);
 		$queryResults= mysqli_num_rows($result);
 		
@@ -135,9 +135,8 @@
 						<div style='height: auto; width:100%;padding: 50px; border-radius: 10px; margin-left: 0%;'>".$row['textpost']."</div>
 					</div>
 				<div style='height:40px; width:100%; display:flex; margin-top: -8%; background-color:  rgb(63, 21, 50);'>
-					<button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
-					<button class='btn btn-primary'  style='margin-left: 25%;'>comment</button>
-					<button class='btn btn-primary'style=' margin-left: 30%;' >share</button>
+				<button class='btn btn-primary'  style='margin-left: 5%;'>comment</button>
+					<button class='btn btn-primary'style=' margin-left: 50%;' >share</button>
 				</div>
 		
 
@@ -156,7 +155,32 @@
 		</div>
 	
 	
+		<button class="btn btn-success" id= "morebtn1" style="	margin-left: 20%;
+	position: fixed;
+	top: 80%;
+	right: 1%;
+	height: auto;
+	font-size: 20px;
+	">Click here and <br>scroll down to <br>See more posts</button>
+			<script>
+			//Jquery code to load 5 posts at a time
 
+			$(document).ready(function(){
+				var postcount = 5;
+
+			$("#morebtn1").click(function() {
+				 postcount= postcount+ 5;
+				$("#postsclass1").load("loadtextpostsbusiness.php", {
+					postNewCount: postcount 
+
+				});
+
+			});
+
+			});
+
+</script>
+	
 	
 
 </div>

@@ -95,9 +95,10 @@
 						
 						</div>
 						<div style='height:40px; width:100%; display:flex; margin-top: -10%; background-color:  rgb(63, 21, 50);'>
-							<button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
-							<button class='btn btn-primary'  style='margin-left: 20%;'>comment</button>
-							<button class='btn btn-primary'style=' margin-left: 19%;' >share</button>
+								
+						<button class='btn btn-primary'  style='margin-left: 2%;'>comment</button>
+						<button class='btn btn-primary'style=' margin-left: 40%;' >share</button>
+				</div>
 						</div>
 					
 					

@@ -5,11 +5,11 @@
 	<title>SecSite stories</title>
 	<script src="secsite.js"></script>
 
-	<!--Jquery links-->
-	<script
-		src="https://code.jquery.com/jquery-3.5.1.min.js"
-		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-		crossorigin="anonymous"></script>
+ 
+	    	<!--Jquery links-->
+	
+			<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
 	<script src="js/emojionearea.min.js"></script>
 	<script src="js/emojionearea.js"></script>
 
@@ -25,6 +25,9 @@
 <link rel="stylesheet" type="text/css" href="css/emojionearea.min.css">
 <link rel="stylesheet" type="text/css" href="css/emojionearea.css">
 
+
+
+
 </head>
 
 <body>
@@ -33,7 +36,6 @@
 	<!--bootstrap links-->
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
-
 
 
 
@@ -122,13 +124,13 @@
 
 	</dir>
 	<h4 id="newlabel0">New</h4>
-	
-		<div id="postsclass1"  style="margin-top: -15%;">
+
+	<div id="postsclass1"  style="margin-top: -15%;">
 			<!--This is where the text posts appear-->
 
 			<?php
 		include('db.php');
-		$sql="SELECT * FROM secstories ORDER BY ID DESC";
+		$sql="SELECT * FROM secstories ORDER BY ID DESC LIMIT 5";
 		$result= mysqli_query($con,$sql);
 		$queryResults= mysqli_num_rows($result);
 		
@@ -140,9 +142,12 @@
 						<div style='height: auto; width:100%;padding: 50px; border-radius: 10px; margin-left: 0%;'>".$row['textpost']."</div>
 					</div>
 				<div style='height:40px; width:100%; display:flex; margin-top: -8%; background-color:  rgb(63, 21, 50);'>
-					<p style='font-size: 40px;'>&#x1F603;</p>
-					<button class='btn btn-primary'  style='margin-left: 25%;'>comment</button>
-					<button class='btn btn-primary'style=' margin-left: 30%;' >share</button>
+					
+				
+					<button class='btn btn-primary'  style='margin-left: 5%;'>comment</button>
+					<button class='btn btn-primary'style=' margin-left: 50%;' id='sharebtn' data-title='Document'>share</button>
+
+
 				</div>
 		
 
@@ -153,26 +158,55 @@
 			echo"<script>alert('No record yet')</script>";
 			}
 
-			//<button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
 		
 		?>
+	
+	</div>
 
 
-		</div>
 	
+	<button class="btn btn-success" id= "morebtn1" style="	margin-left: 20%;
+	position: fixed;
+	top: 80%;
+	right: 1%;
+	height: auto;
+	font-size: 20px;
+	">Click here and <br>scroll down to <br>See more posts</button>
+
+
+	
+		
+		<script>
+					//Jquery code to load 5 posts at a time
+		
+					$(document).ready(function(){
+						var postcount = 5;
+		
+					$("#morebtn1").click(function() {
+						 postcount= postcount+ 5;
+						$("#postsclass1").load("loadtextposts.php", {
+							postNewCount: postcount 
+		
+						});
+		
+					});
+		
+					});
+		
+		</script>
 	
 
 	
+
 
 </div>
-
+		
 
 
 </div>
-
-
 
 
 
 </body>
+
 </html>

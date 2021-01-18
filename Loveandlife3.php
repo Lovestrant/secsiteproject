@@ -51,6 +51,9 @@ if (isset($_POST['upload'])) {
 	
 
 	 
+<!--Jquery links-->
+	
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 	
 
 <!--bootstrap links-->
@@ -155,7 +158,7 @@ if (isset($_POST['upload'])) {
 
 	<?php
 		include('db.php');
-		$sql="SELECT * FROM videos WHERE category='loveandlife' ORDER BY ID DESC";
+		$sql="SELECT * FROM videos WHERE category='loveandlife' ORDER BY ID DESC LIMIT 2";
 		$result= mysqli_query($con,$sql);
 		$queryResults= mysqli_num_rows($result);
 		
@@ -172,9 +175,8 @@ if (isset($_POST['upload'])) {
 				
 				</div>
 				<div style='height:40px; width:100%; display:flex; margin-top: -10%; background-color:  rgb(63, 21, 50);'>
-					<button class='btn btn-primary' style=' margin-left: 0%;'>Like</button>
-					<button class='btn btn-primary'  style='margin-left: 20%;'>comment</button>
-					<button class='btn btn-primary'style=' margin-left: 19%;' >share</button>
+				<button class='btn btn-primary'  style='margin-left: 2%;'>comment</button>
+				<button class='btn btn-primary'style=' margin-left: 40%;' >share</button>
 				</div>
 			
 				";
@@ -189,7 +191,25 @@ if (isset($_POST['upload'])) {
 
 	
 </div>
+<button class="btn btn-success" id= "morebtn" style="margin-bottom: 10%; margin-left: 20%;font-size: 30px;">See more posts</button>
+			<script>
+			//Jquery code to load 2 posts at a time
 
+			$(document).ready(function(){
+				var postcount = 2;
+
+			$("#morebtn").click(function() {
+				 postcount= postcount+ 2;
+				$("#postsclass3").load("loadvideopostsloveandlife.php", {
+					postNewCount: postcount 
+
+				});
+
+			});
+
+			});
+
+</script>
 
 </div>
 

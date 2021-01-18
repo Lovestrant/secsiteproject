@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sharetrial.com</title>
+
+    <script src="secsite.js"></script>
+</head>
+<body>
+    <button class='btn btn-primary' id='sharebtn' data-title='Document' data-url='http://localhost:8000'>share</button>
+    <div id='sharefallback'>
+        share this link <br>
+        <a href=".">http://localhost:8000</a>
+        </div>
+        
+    <script>
+
+var shareBtn = document.getElementById("sharebtn");
+var shareFallback = document.getElementById("sharefallback");
+if(shareBtn && shareFallback) {
+	if(navigator.share){
+        shareBtn.style.display="block";
+        shareBtn.addEventListener("click", function() {
+            navigator.share({
+               title: shareBtn.getAttribute("data-title"),
+               url: shareBtn.getAttribute("data-url")
+            }).then(function(){
+                console.log('share sucess');
+            }).catch(console.error);
+        })
+	}else{
+		shareFallback.style.display="block";
+	}
+}
+
+    </script>
+
+    <style>
+        #sharefallback, #sharebtn{
+            display: none;
+        }
+    </style>
+</body>
+</html>
