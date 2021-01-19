@@ -96,12 +96,11 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 		
 	</div>
 	
-
 	<div  class="sidenav">
 		<a href="secstories.php">SecStories</a>
-		
 		<a  href="secpictures.php">SecPics</a>
 		<a  href="secvideos.php">SecVids</a>
+		<a  href="secaudios.php">SecAudios</a>
 		
 	  </div>
 
@@ -123,40 +122,47 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
                         <h2 class="col-sm-12" id="secpicsh" style="color:brown;">SecPics(Entertainment)</h2>
                   
                     </p>
-                <dir id="alphadiv" style="width: 60%; padding: 10px;">
+					<dir id="alphadiv" style="width: 70%;  margin-left: 10%;background-color: black;">
 
-            <form method ="POST" action="secpictures.php"  enctype="multipart/form-data">	 		
-			<p style="display: flex; text-align: centre; margin-bottom: 0%;">	
-							<label class="form-label" for="secpicsupload" id="labels"> Attach pictures here</label><br>
-				
-							
-								<input id="secpicsupload" type="file" name="image" accept="image/*" style="width: auto;" style="background-color: red;"><br>
-					</p>	
-						
-						<progress class="progress-bar" id="progressBar" min = "0"; max="100" value="0"></progress><br>
-					
-							<textarea class="form-control" name="textarea2" id="textarea2" cols="50" rows= "2" placeholder="Caption your pictures"></textarea>
-							<br>
-							<p><label style="color:blue;">Choose category of your post.(OPTIONAL)</label></p>
-				<p style="display:flex;">
-			
-				<input type="radio" name="category" value="loveandlife" style="height: 20px;">Love&Life<br>
-				<input type="radio" name="category" value="Politics" style="height: 20px;">Politics<br>
-				<input type="radio" name="category" value="Entertainment" style="height: 20px;">Entertainment<br>
-				<input type="radio" name="category" value="Gamesandsports" style="height: 20px;">Games&sports<br>
-				
-				<input type="radio" name="category" value="Others" style="height: 20px;">Others
-				</p>
-				<p style="margin-top: -20px;">
-				<input type="radio" name="category" value="Business" style="height: 20px; width:20px; text-align: left;">Business<br>
-			
-				</p>
-							<button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2" onclick="uploadFile()">SecPost</button>
-            </form>
-						     
-             </dir>
+<form method ="POST" action="secpictures.php"  enctype="multipart/form-data">
 
-	<h4 id="newlabel0">New</h4>
+<p style="display: flex; text-align: left; margin-bottom: 0%;">	
+<label class="form-label" for="secpicsupload" id="labels"style="width: auto; margin-left: 10%;"> Attach pictures here</label><br>
+	
+				
+					<input id="secpicsupload" type="file" name="image" accept="image/*" style="width: auto;" style="background-color: red;border-radius: 20px;"><br>
+		</p>	
+			
+			<progress class="progress-bar" id="progressBar" min = "0"; max="100" value="0"></progress><br>
+		
+				<textarea class="form-control" name="textarea2" id="textarea2" cols="50" rows= "1" placeholder="Caption your pictures" style="width:90%;border-radius: 20px; margin-left: 5%;"></textarea>
+				<br>
+				<p><label style="color:blue;">Choose category of your post.(OPTIONAL)</label></p>
+
+				
+	<p style="display:flex; width: auto;margin-left: 0%;">
+
+	<input type="radio" id= "radio" name="category" value="loveandlife" style="height: 20px;">Love&Life<br>
+	<input type="radio" id= "radio" name="category" value="Politics" style="height: 20px;">Politics<br>
+	
+	<input type="radio" id= "radio" name="category" value="Entertainment" style="height: 20px;">Entertainment<br>
+
+
+	<input type="radio" id= "radio" name="category" value="Gamesandsports" style="height: 20px;">Games&sports<br>
+	
+	<input type="radio" id= "radio" name="category" value="Others" style="height: 20px;">Others
+
+	<input type="radio" id= "radio" name="category" value="Business" style="height: 20px;">Business<br>
+
+	</p>
+
+
+				<button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2" onclick="uploadFile()">SecPost</button>
+</form>
+				 
+ </dir>
+
+<h4 id="newlabel0">New</h4>
 
 		<div id="postsclass2" style="margin-top: -10%;margin-left: -10%;">
 			<!--This is where the text posts appear-->

@@ -57,10 +57,11 @@
 	</div>
 	
 
-	<div class="sidenav">
+	<div  class="sidenav">
 		<a href="secstories.php">SecStories</a>
-		<a href="secpictures.php">SecPics</a>
-		<a href="secvideos.php">SecVids</a>
+		<a  href="secpictures.php">SecPics</a>
+		<a  href="secvideos.php">SecVids</a>
+		<a  href="secaudios.php">SecAudios</a>
 		
 	  </div>
 	  
@@ -84,46 +85,52 @@
 				
 					
 				</p>
-			<dir id="alphadiv" style="width: 60%; padding: 10px;">
-
-				<p><br>
-				
-				<textarea class="form-control" name="textarea1" id="textarea1" cols="50" rows= "2" placeholder="Share your story anonymously" style="margin-top: 20px;height:100% ;"></textarea>
-				<p><label style="color:blue;">Choose category of your post.(OPTIONAL)</label></p>
-				<p style="display:flex;">
+				<dir id="alphadiv" style="width: 70%;  margin-left: 10%;background-color: black;">
+               	<p><br>
+				   <label  class="form-label" for="secvidsupload"  id="labels"> Attach docs here</label>
+                    <input type="file" name="file" style="width: auto;" id="inpFile" accept=".doc,.docx">
+                <textarea class="form-control" name="textarea1" id="textarea1" cols="70" rows= "1" placeholder="Share your story anonymously" style="width:70%;border-radius: 20px; margin-left: 10%;"></textarea>
 			
-				<input type="radio" name="category" value="loveandlife" style="height: 20px;">Love&Life<br>
-				<input type="radio" name="category" value="Politics" style="height: 20px;">Politics<br>
-				<input type="radio" name="category" value="Entertainment" style="height: 20px;">Entertainment<br>
-				<input type="radio" name="category" value="Gamesandsports" style="height: 20px;">Games&sports<br>
+
+                <p><label style="color:blue;">Choose category of your post.(OPTIONAL)</label></p>
+				<p style="display:flex; width: auto;margin-left: 0%;">
+			
+				<input type="radio" id= "radio" name="category" value="loveandlife" style="height: 20px;">Love&Life<br>
+				<input type="radio" id= "radio" name="category" value="Politics" style="height: 20px;">Politics<br>
+                
+                <input type="radio" id= "radio" name="category" value="Entertainment" style="height: 20px;">Entertainment<br>
+
+
+                <input type="radio" id= "radio" name="category" value="Gamesandsports" style="height: 20px;">Games&sports<br>
 				
-				<input type="radio" name="category" value="Others" style="height: 20px;">Others
-				</p>
-				<p style="margin-top: -20px;">
-				<input type="radio" name="category" value="Business" style="height: 20px; width:20px; text-align: left;">Business<br>
+				<input type="radio" id= "radio" name="category" value="Others" style="height: 20px;">Others
+		
+				<input type="radio" id= "radio" name="category" value="Business" style="height: 20px;">Business<br>
 			
 				</p>
 				
 					
-					<button name="btnsubmit" type="submit" class="btn btn-primary" id="secpostbtn1" onclick="textupload()">SecPost</button></p><br>
-	</form>
-<!--Emoji javascript codes-->
+					<button name="btnsubmit" type="submit" class="btn btn-primary" id="secpostbtn1">SecPost</button></p><br>
+    </form>
+	
+	
+	</dir>
+	<h4 id="newlabel0" style=" margin-top: 0%;">New</h4>
+
+
+	<!--Emoji javascript codes-->
 
 <script>
 	
 	$(document).ready(function () {
 		$('#textarea12').emojioneArea({
-			pickerPosition: "bottom",
-			width: "30px",
-			height: "0px"
+			pickerPosition: "bottom"
+			
 		
 		
 		})
 	})
 </script>
-
-	</dir>
-	<h4 id="newlabel0">New</h4>
 
 	<div id="postsclass1"  style="margin-top: -15%;">
 			<!--This is where the text posts appear-->
@@ -137,21 +144,17 @@
 		if($queryResults >0) {
 			while($row = mysqli_fetch_assoc($result)) {
 				echo "
-					<div style='height: auto; border-radius: 10px; margin-bottom= 0%;  margin-top: 18%; width: 80%;'>
-					
-						<div style='height: auto; width:100%;padding: 50px; border-radius: 10px; margin-left: 0%;'>".$row['textpost']."</div>
-					</div>
-				<div style='height:40px; width:100%; display:flex; margin-top: -8%; background-color:  rgb(63, 21, 50);'>
-					
+				<div style='height: auto; border-radius: 10px; margin-bottom= 0%;  margin-top: 18%; width: 80%;'>
 				
-					<button class='btn btn-primary'  style='margin-left: 5%;'>comment</button>
-					<button class='btn btn-primary'style=' margin-left: 50%;' id='sharebtn' data-title='Document'>share</button>
-
-
+					<div style='height: auto; width:100%;padding: 50px; border-radius: 10px; margin-left: 0%;'>".$row['textpost']."</div>
 				</div>
-		
+			<div style='height:40px; width:100%; display:flex; margin-top: -8%; background-color:  rgb(63, 21, 50);'>
+			<button class='btn btn-primary'  style='margin-left: 5%;'>comment</button>
+				<button class='btn btn-primary'style=' margin-left: 50%;' >share</button>
+			</div>
+	
 
-					";
+				";
 			
 			}
 		}else{
@@ -163,8 +166,8 @@
 	
 	</div>
 
-
 	
+
 	<button class="btn btn-success" id= "morebtn1" style="	margin-left: 20%;
 	position: fixed;
 	top: 80%;
@@ -192,6 +195,21 @@
 					});
 		
 					});
+
+
+
+					//ajax jquery to post form data to the db without the browser refreshing
+function formSubmit(){
+	$.ajax({
+		type: 'POST',
+		url: 'secstoriesposts.php',
+		data: $("#textform").serialize()
+	});
+	
+	var form = document.getElementById("#textform").reset();
+	return false;
+}
+			
 		
 		</script>
 	

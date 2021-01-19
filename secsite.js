@@ -16,19 +16,6 @@ function share2() {
 }
 
 
-function share() {
-var shareBtn = document.getElementById("sharebtn");
-var shareFallback = document.getElementById("sharefallback");
-if(shareBtn && shareFallback) {
-	if(navigator.share){
-
-	}else{
-		shareFallback.style.display="block";
-	}
-}
-
-}
-
 
 
 

@@ -28,7 +28,7 @@ if (isset($_POST['upload'])) {
 		}
 	
 	}else{
-		echo "<script>alert('Choose a video or audio file to SecPost')</script>";
+		echo "<script>alert('Choose a video file to SecPost')</script>";
 		echo "<script>location.replace('secvideos.php');</script>";
 	}
 	
@@ -95,9 +95,9 @@ if (isset($_POST['upload'])) {
 
 	<div  class="sidenav">
 		<a href="secstories.php">SecStories</a>
-		
 		<a  href="secpictures.php">SecPics</a>
 		<a  href="secvideos.php">SecVids</a>
+		<a  href="secaudios.php">SecAudios</a>
 		
 	  </div>
 	  <div class="sidenav2">
@@ -119,40 +119,44 @@ if (isset($_POST['upload'])) {
                     
                         
                     </p>
-        <dir id="alphadiv" style="width: 60%;  padding: 10px;">
+					<dir id="alphadiv" style="width: 70%;  margin-left: 10%;background-color: black;">
 
                                         
-                 <form method ="POST" action="secvideos.php"  enctype="multipart/form-data">		
-			<p style="display: flex; text-align: centre; margin-bottom: 0%;">
-			
-			<label  class="form-label" for="secvidsupload"  id="labels"> Attach videos/audios here</label>
-                    <input type="file" name="file" style="width: auto;"  accept="video/*, audio/*">	
-			</p>
+<form method ="POST" action="secvideos.php"  enctype="multipart/form-data" id="uploadForm3">		
+<p style="display: flex; text-align: centre; margin-bottom: 0%;">
 
-                    <progress class="progress-bar" id="progressBar" min = "0"; max="100" value="0"></progress><br>
-                    <textarea type="text" class="form-control"  name="textarea3" id="textarea3" cols="50" rows= "2" placeholder="Caption your video/audio"></textarea><br>
-				
-					<p><label style="color:blue;">Choose category of your post.(OPTIONAL)</label></p>
-				<p style="display:flex;">
-			
-				<input type="radio" name="category" value="loveandlife" style="height: 20px;">Love&Life<br>
-				<input type="radio" name="category" value="Politics" style="height: 20px;">Politics<br>
-				<input type="radio" name="category" value="Entertainment" style="height: 20px;">Entertainment<br>
-				<input type="radio" name="category" value="Gamesandsports" style="height: 20px;">Games&sports<br>
-				
-				<input type="radio" name="category" value="Others" style="height: 20px;">Others
-				</p>
-				<p style="margin-top: -20px;">
-				<input type="radio" name="category" value="Business" style="height: 20px; width:20px; text-align: left;">Business<br>
-			
-				</p>
-                    <button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2" onclick="uploadFile()">SecPost</button>
+<label  class="form-label" for="secvidsupload"  id="labels"> Attach videos here</label>
+   <input type="file" name="file" style="width: auto;" id="inpFile" accept="video/*">	
+</p>
 
-                </form>
-                                    
-             </dir>
+   <progress class="progress-bar" id="progressBar" name="progressBar" min = "0"; max="100" value="0"></progress><br>
+   <textarea type="text" class="form-control"  name="textarea3" id="textarea3" cols="50" rows= "1" placeholder="Caption your video" style="width:90%;border-radius: 20px; margin-left: 5%;"></textarea><br>
 
-	<h4 id="newlabel0">New</h4>
+   <p><label style="color:blue;">Choose category of your post.(OPTIONAL)</label></p>
+			   
+   <p style="display:flex; width: auto;margin-left: 0%;">
+
+<input type="radio" id= "radio" name="category" value="loveandlife" style="height: 20px;">Love&Life<br>
+<input type="radio" id= "radio" name="category" value="Politics" style="height: 20px;">Politics<br>
+
+<input type="radio" id= "radio" name="category" value="Entertainment" style="height: 20px;">Entertainment<br>
+
+
+<input type="radio" id= "radio" name="category" value="Gamesandsports" style="height: 20px;">Games&sports<br>
+
+<input type="radio" id= "radio" name="category" value="Others" style="height: 20px;">Others
+
+<input type="radio" id= "radio" name="category" value="Business" style="height: 20px;">Business<br>
+
+</p>
+
+   <button  type="submit" name="upload"  class="btn btn-primary"id="secpostbtn2" onclick="uploadFile()">SecPost</button>
+
+</form>
+				   
+</dir>
+
+<h4 id="newlabel0">New</h4>
 	<!--This is where the text posts appear-->
 <div id="postsclass3" style="margin-top: -15%;margin-left: 0%; text-align: centre;">
 		
@@ -166,33 +170,41 @@ if (isset($_POST['upload'])) {
 		if($queryResults >0) {
 			while($row = mysqli_fetch_assoc($result)) {
 				echo "
-				<div style='height:auto; margin-top:20%;'>
-				<div  style='height: auto;width: auto; border-radius: 10px;text-align: left; margin-left:0%; padding:10px;'>".$row['caption']."</div>
-		
-				<video style='width: 100%; height: auto; margin-top:-12%;' controls>
-				<source src='videos/".$row['name']."' type= 'video/mp4'>
-				
+			
+				<div  style='height: auto; width:80%;padding: 10px;text-align:centre;display: inline-block;  margin-top: 20%;margin-bottom: 0px;'>
+				<p>".$row['caption']."</p>
 			
 				
 				</div>
+				 
+				 <video style='width: 80%; height: auto; margin-top:0px; margin-left: 18.7%;' controls>
+				 <source src='videos/".$row['name']."' type= 'video/mp4'>
+
+			
+				
+				
 				<div style='height:40px; width:100%; display:flex; margin-top: -10%; background-color:  rgb(63, 21, 50);'>
-				<button class='btn btn-primary'  style='margin-left: 2%;'>comment</button>
-				<button class='btn btn-primary'style=' margin-left: 40%;' >share</button>
+					
+					<button class='btn btn-primary'  style='margin-left: 5%;'>comment</button>
+					<button class='btn btn-primary'style=' margin-left: 50%;' >share</button>
 				</div>
-			
+				
 				";
+
+				
+				
 			}
+		}else{
+			echo"<script>alert('No record yet')</script>";
 		}
-		else {
-		echo "<script>alert('No record yet.')</script>";
-			}
+
 		
-	?>
+		?>
 
-
+		</div>
 	
-</div>
-<button class="btn btn-success" id= "morebtn" style="margin-bottom: 10%; margin-left: 20%;font-size: 30px;">See more posts</button>
+	
+		<button class="btn btn-success" id= "morebtn" style="margin-bottom: 10%; margin-left: 20%;font-size: 30px;">See more posts</button>
 			<script>
 			//Jquery code to load 2 posts at a time
 
@@ -211,6 +223,7 @@ if (isset($_POST['upload'])) {
 			});
 
 </script>
+
 
 </div>
 

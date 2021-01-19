@@ -46,12 +46,11 @@
 		
 	</div>
 	
-
 	<div  class="sidenav">
 		<a href="secstories.php">SecStories</a>
-		
 		<a  href="secpictures.php">SecPics</a>
 		<a  href="secvideos.php">SecVids</a>
+		<a  href="secaudios.php">SecAudios</a>
 		
 	  </div>
 
