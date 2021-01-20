@@ -37,8 +37,8 @@
 		<form action="searchengine4entertainment.php" method="POST" name="sec-search3">
 		<p  id="searchinput">
 		
-				<input class="form-control"  type="text" placeholder="Search SecSite" id="searchme" name="search3">
-				<button class="btn btn-danger" type="submit" name="searchbtn3" id="btndanger">SecSearch</button>
+				<input class="form-control"  type="text" placeholder="Search SecSite" id="searchme" name="search4">
+				<button class="btn btn-danger" type="submit" name="searchbtn4" id="btndanger">SecSearch</button>
 		</p>
 		
 		</form>
@@ -55,12 +55,15 @@
 		
 	  </div>
 
+	  </div>
+
 	  <div class="sidenav2">
-		<a href="Loveandlife3.php">Love & Life</a>
-		<a href="Politics3.php">Politics</a>
-		<a href="Entertainment3.php">Entertainment</a>
-		<a href="Gamesandsports3.php">Games & sports</a>
-		<a href="Others3.php">Others</a>
+		<a href="Loveandlife4.php">Love & Life</a>
+		<a href="Politics4.php">Politics</a>
+		<a href="Entertainment4.php">Entertainment</a>
+		<a href="Gamesandsports4.php">Games & sports</a>
+		<a href="Business4.php">Business</a>
+		<a href="Others4.php">Others</a>
 		
 	  </div>	
 
@@ -72,10 +75,10 @@
 			<!--This is where the text posts appear-->
          <?php
             include('db.php');
-            if(isset($_POST['searchbtn3'])) {
-                if(!empty($_POST['search3'])){
+            if(isset($_POST['searchbtn4'])) {
+                if(!empty($_POST['search4'])){
 
-                $search = mysqli_real_escape_string($con, $_POST['search3']);
+                $search = mysqli_real_escape_string($con, $_POST['search4']);
                 $sql = "SELECT * FROM audios WHERE category='Entertainment' and caption LIKE '%$search%'";
                 $result = mysqli_query($con, $sql);
                 $queryResult = mysqli_num_rows($result);
@@ -85,26 +88,23 @@
                 if($queryResult > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
 						echo "
-						<div style='height:auto; margin-top:20%'>
-						<div  style='height: auto; border-radius: 10px;text-align: left; margin-left:0%; padding:10px;'>".$row['caption']."</div>
+						<div style='height:auto;margin-top:-60%;width:90%;margin-left:15%;'>
+						<div  style='height: auto;width: 100%; border-radius: 10px;text-align: left; margin-left:0%; padding:10px; '>".$row['caption']."</div>
 				
 						<video style='width: 100%; height: 50px; margin-top:-12%;' controls>
-						<source src='videos/".$row['name']."' type= 'video/mp4'>
+						<source src='audios/".$row['name']."' type= 'video/mp4'>
 						
 					
 						
 						</div>
 						<div style='height:40px; width:100%; display:flex; margin-top: -10%; background-color:  rgb(63, 21, 50);'>
-								
 						<button class='btn btn-primary'  style='margin-left: 2%;'>comment</button>
 						<button class='btn btn-primary'style=' margin-left: 40%;' >share</button>
-				</div>
 						</div>
+				
 					
-					
-		
-		
 						";
+				
 				
                     
                     }

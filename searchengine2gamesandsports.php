@@ -53,15 +53,15 @@
 		
 	  </div>
 
-	  <div class="sidenav2">
+      <div class="sidenav2">
 		<a href="Loveandlife2.php">Love & Life</a>
 		<a href="Politics2.php">Politics</a>
 		<a href="Entertainment2.php">Entertainment</a>
 		<a href="Gamesandsports2.php">Games & sports</a>
+        <a href="Business2.php">Business</a>
 		<a href="Others2.php">Others</a>
 		
-	  </div>	
-
+	  </div>
 <div id="secvideos" style="width: 1000px; margin-left: 20px;">
 
 

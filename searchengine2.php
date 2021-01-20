@@ -58,6 +58,7 @@
 		<a href="Politics2.php">Politics</a>
 		<a href="Entertainment2.php">Entertainment</a>
 		<a href="Gamesandsports2.php">Games & sports</a>
+        <a href="Business2.php">Business</a>
 		<a href="Others2.php">Others</a>
 		
 	  </div>	

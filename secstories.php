@@ -87,9 +87,7 @@
 				</p>
 				<dir id="alphadiv" style="width: 70%;  margin-left: 10%;background-color: black;">
                	<p><br>
-				   <label  class="form-label" for="secvidsupload"  id="labels"> Attach docs here</label>
-                    <input type="file" name="file" style="width: auto;" id="inpFile" accept=".doc,.docx">
-                <textarea class="form-control" name="textarea1" id="textarea1" cols="70" rows= "1" placeholder="Share your story anonymously" style="width:70%;border-radius: 20px; margin-left: 10%;"></textarea>
+				     <textarea class="form-control" name="textarea1" id="textarea1" cols="70" rows= "1" placeholder="Share your story anonymously" style="width:70%;border-radius: 20px; margin-left: 10%;"></textarea>
 			
 
                 <p><label style="color:blue;">Choose category of your post.(OPTIONAL)</label></p>
@@ -118,19 +116,7 @@
 	<h4 id="newlabel0" style=" margin-top: 0%;">New</h4>
 
 
-	<!--Emoji javascript codes-->
 
-<script>
-	
-	$(document).ready(function () {
-		$('#textarea12').emojioneArea({
-			pickerPosition: "bottom"
-			
-		
-		
-		})
-	})
-</script>
 
 	<div id="postsclass1"  style="margin-top: -15%;">
 			<!--This is where the text posts appear-->
@@ -149,10 +135,8 @@
 					<div style='height: auto; width:100%;padding: 50px; border-radius: 10px; margin-left: 0%;'>".$row['textpost']."</div>
 				</div>
 			<div style='height:40px; width:100%; display:flex; margin-top: -8%; background-color:  rgb(63, 21, 50);'>
-			<button class='btn btn-primary'  style='margin-left: 5%;'>comment</button>
-				<button class='btn btn-primary'style=' margin-left: 50%;' >share</button>
-			</div>
-	
+			
+	</div>
 
 				";
 			
@@ -198,24 +182,17 @@
 
 
 
-					//ajax jquery to post form data to the db without the browser refreshing
-function formSubmit(){
-	$.ajax({
-		type: 'POST',
-		url: 'secstoriesposts.php',
-		data: $("#textform").serialize()
-	});
-	
-	var form = document.getElementById("#textform").reset();
-	return false;
-}
-			
+		
 		
 		</script>
 	
 
-	
-
+	<!--
+	<textarea type='text' name='comment' placeholder='type comment...' style='width: 50%; border-radius:10px;'></textarea>
+			<button class='btn btn-primary' id='commentbtn' style='margin-left: 0%;'>comment</button>
+			</div>
+			<div style='margin-top:-10%;'>
+			</div>-->
 
 </div>
 		

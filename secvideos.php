@@ -184,10 +184,7 @@ if (isset($_POST['upload'])) {
 				
 				<div style='height:40px; width:100%; display:flex; margin-top: 20%; background-color:  rgb(63, 21, 50);'>
 					
-				<button class='btn btn-primary'  style='margin-left: 2%;'>comment</button>
-				<button class='btn btn-primary'style=' margin-left: 40%;' >share</button>
-				</div>
-				
+			
 				";
 				
 			}

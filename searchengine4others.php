@@ -55,14 +55,17 @@
 		
 	  </div>
 
+	  </div>
+
 	  <div class="sidenav2">
-		<a href="Loveandlife3.php">Love & Life</a>
-		<a href="Politics3.php">Politics</a>
-		<a href="Entertainment3.php">Entertainment</a>
-		<a href="Gamesandsports3.php">Games & sports</a>
-		<a href="Others3.php">Others</a>
+		<a href="Loveandlife4.php">Love & Life</a>
+		<a href="Politics4.php">Politics</a>
+		<a href="Entertainment4.php">Entertainment</a>
+		<a href="Gamesandsports4.php">Games & sports</a>
+		<a href="Business4.php">Business</a>
+		<a href="Others4.php">Others</a>
 		
-	  </div>	
+	  </div>		
 
 <div id="secvideos" style="width: 1000px; margin-left: 50px;">
 
@@ -85,35 +88,32 @@
                 if($queryResult > 0) {
                     while($row = mysqli_fetch_assoc($result)) {
 						echo "
-						<div style='height:auto; margin-top:20%'>
-						<div  style='height: auto; border-radius: 10px;text-align: left; margin-left:0%; padding:10px;'>".$row['caption']."</div>
+						<div style='height:auto;margin-top:-60%;width:90%;margin-left:15%;'>
+						<div  style='height: auto;width: 100%; border-radius: 10px;text-align: left; margin-left:0%; padding:10px; '>".$row['caption']."</div>
 				
 						<video style='width: 100%; height: 50px; margin-top:-12%;' controls>
-						<source src='videos/".$row['name']."' type= 'video/mp4'>
+						<source src='audios/".$row['name']."' type= 'video/mp4'>
 						
 					
 						
 						</div>
 						<div style='height:40px; width:100%; display:flex; margin-top: -10%; background-color:  rgb(63, 21, 50);'>
-								
 						<button class='btn btn-primary'  style='margin-left: 2%;'>comment</button>
 						<button class='btn btn-primary'style=' margin-left: 40%;' >share</button>
-				</div>
 						</div>
+				
 					
-					
-		
-		
 						";
+				
 				
                     
                     }
                     
-                }else {
+               		 }else {
 					echo"<script>alert('No results matching your search.');</script>";
-					echo "<script>location.replace('0thers.php');</script>";
-                }
-            }else{
+					echo "<script>location.replace('0thers4.php');</script>";
+               		 }
+            	}else{
                 echo "<script>alert('Type something to search')</script>";
                                  echo "<script>location.replace('0thers4.php');</script>";   
                                 }

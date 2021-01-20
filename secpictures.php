@@ -193,10 +193,16 @@ if(move_uploaded_file($_FILES['image']['tmp_name'], $target) && $query) {
 				
 				<div style='height:40px; width:100%; display:flex; margin-top: -10%; background-color:  rgb(63, 21, 50);'>
 					
-					<button class='btn btn-primary'  style='margin-left: 5%;'>comment</button>
-					<button class='btn btn-primary'style=' margin-left: 50%;' >share</button>
-				</div>
-				
+			
+			</div>
+			<form>
+			<p style='margin-top: -13%; margin-left: 20%;'>
+			<textarea rows='2' type='text' name='comment' placeholder='type comment...' style='width: 50%; border-radius:10px; height: auto;'></textarea>
+			<button class='btn btn-primary' id='commentbtn' style='margin-left: 0%;'>comment</button>
+			</p>
+			<div style='margin-top:0%; '>
+			</div>
+			</form>
 				";
 
 				

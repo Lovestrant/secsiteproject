@@ -78,11 +78,11 @@ if (isset($_POST['upload'])) {
 <div class="container">
 	<div class="page-hearder" id="samp">
 		<h1 id="mainhearder">SecSite</h1>
-		<form action="searchengine4business.php" method="POST" name="sec-search4">
+		<form action="searchengine4business.php" method="POST" name="sec-search3">
 		<p  id="searchinput">
 		
 				<input class="form-control" type="text" placeholder="Search SecSite" id="searchme" name="search4">
-				<button class="btn btn-danger" type="submit" name="searchbtn3" id="btndanger">SecSearch</button>
+				<button class="btn btn-danger" type="submit" name="searchbtn4" id="btndanger">SecSearch</button>
 		</p>
 		
 		</form>

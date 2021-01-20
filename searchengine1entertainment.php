@@ -53,11 +53,13 @@
 		
 	  </div>
           
+              
       <div class="sidenav2">
 		<a href="Loveandlife1.php">Love & Life</a>
 		<a href="Politics1.php">Politics</a>
 		<a href="Entertainment1.php">Entertainment</a>
 		<a href="Gamesandsports1.php">Games & sports</a>
+		<a href="Business1.php">Business</a>
 		<a href="Others1.php">Others</a>
 		
 	  </div>

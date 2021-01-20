@@ -29,7 +29,7 @@ if (isset($_POST['upload'])) {
 	
 	}else{
 		echo "<script>alert('Choose an audio  file to SecPost')</script>";
-		echo "<script>location.replace('Entertainment4.php');</script>";
+		echo "<script>location.replace('Loveandlife4.php');</script>";
 	}
 	
 }
@@ -82,7 +82,7 @@ if (isset($_POST['upload'])) {
 		<p  id="searchinput">
 		
 				<input class="form-control" type="text" placeholder="Search SecSite" id="searchme" name="search4">
-				<button class="btn btn-danger" type="submit" name="searchbtn3" id="btndanger">SecSearch</button>
+				<button class="btn btn-danger" type="submit" name="searchbtn4" id="btndanger">SecSearch</button>
 		</p>
 		
 		</form>

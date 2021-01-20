@@ -82,7 +82,7 @@ if (isset($_POST['upload'])) {
 		<p  id="searchinput">
 		
 				<input class="form-control" type="text" placeholder="Search SecSite" id="searchme" name="search4">
-				<button class="btn btn-danger" type="submit" name="searchbtn3" id="btndanger">SecSearch</button>
+				<button class="btn btn-danger" type="submit" name="searchbtn4" id="btndanger">SecSearch</button>
 		</p>
 		
 		</form>
@@ -200,7 +200,7 @@ if (isset($_POST['upload'])) {
 
 	
 </div>
-<button class="btn btn-success" id= "morebtn" style="margin-bottom: 10%; margin-left: 20%;font-size: 30px;">See more posts</button>
+<button class="btn btn-success" id= "morebtn" style="margin-bottom: 20%; margin-left: 20%;font-size: 25px;">See more posts</button>
 			<script>
 			//Jquery code to load 2 posts at a time
 

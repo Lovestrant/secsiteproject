@@ -60,6 +60,7 @@
 		<a href="Politics3.php">Politics</a>
 		<a href="Entertainment3.php">Entertainment</a>
 		<a href="Gamesandsports3.php">Games & sports</a>
+		<a href="Business3.php">Business</a>
 		<a href="Others3.php">Others</a>
 		
 	  </div>	

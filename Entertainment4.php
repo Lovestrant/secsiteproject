@@ -25,6 +25,7 @@ if (isset($_POST['upload'])) {
 	
 		if($res ==1){
 			echo "<script>alert('upload success')</script>";
+			echo "<script>location.replace('Entertainment4.php');</script>";
 		}
 	
 	}else{
@@ -78,11 +79,11 @@ if (isset($_POST['upload'])) {
 <div class="container">
 	<div class="page-hearder" id="samp">
 		<h1 id="mainhearder">SecSite</h1>
-		<form action="searchengine4.php" method="POST" name="sec-search4">
+		<form action="searchengine4entertainment.php" method="POST" name="sec-search4">
 		<p  id="searchinput">
 		
 				<input class="form-control" type="text" placeholder="Search SecSite" id="searchme" name="search4">
-				<button class="btn btn-danger" type="submit" name="searchbtn3" id="btndanger">SecSearch</button>
+				<button class="btn btn-danger" type="submit" name="searchbtn4" id="btndanger">SecSearch</button>
 		</p>
 		
 		</form>
